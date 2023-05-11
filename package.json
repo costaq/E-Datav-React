@@ -1,0 +1,55 @@
+{
+  "name": "e-datav-react",
+  "version": "0.1.1",
+  "type": "module",
+  "main": "./cjs/index.cjs",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:umd": "tsc && vite build -c vite.config.umd.ts",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "react",
+    "chart",
+    "datav",
+    "e-datav"
+  ],
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/costaq/E-DataV-React.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/costaq/E-DataV-React/issues"
+  },
+  "homepage": "https://github.com/costaq/E-DataV-React#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "path": "^0.12.7",
+    "typescript": "*",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.3.0"
+  }
+}
