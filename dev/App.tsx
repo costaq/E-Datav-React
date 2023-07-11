@@ -7,13 +7,19 @@
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useState } from 'react';
-import { FullScreenContainer, DigitalFlop } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1 } from '../packages';
 
 function App() {
 
   return (
     <div className="App">
-      <FullScreenContainer><DigitalFlop /></FullScreenContainer>
+      <FullScreenContainer>
+        <div style={{ height: 200, width: 200 }}>
+          <BorderBox1>
+            <DigitalFlop />
+          </BorderBox1>
+        </div>
+      </FullScreenContainer>
     </div>
   )
 }

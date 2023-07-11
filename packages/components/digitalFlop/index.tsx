@@ -8,7 +8,7 @@
  */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { animation } from '../../utils/animation';
-import './index.scss';
+import { GlobalFontStyle } from '../styled/GlobalStyle';
 
 export interface DigitalFlopProps extends React.HTMLAttributes<HTMLDivElement> {
     /**
@@ -50,7 +50,7 @@ const DigitalFlop: React.FC<DigitalFlopProps> = (props) => {
         fontFamily,
         fontSize: `${fontSize}px`,
         color
-    }), [fontFamily, fontSize, color]); 
+    }), [fontFamily, fontSize, color]);
 
     const formatVal = (val: number) => {
         const num = val.toFixed(decimals);
@@ -83,7 +83,10 @@ const DigitalFlop: React.FC<DigitalFlopProps> = (props) => {
         startVal.current = value;
     }
 
-    return <span className='e-digital-flop' style={styles}>{displayVal}</span>;
+    return <>
+        <GlobalFontStyle />
+        <span className='e-digital-flop' style={styles}>{displayVal}</span>
+    </>;
 }
 
 export default DigitalFlop;

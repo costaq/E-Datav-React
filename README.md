@@ -27,7 +27,6 @@ import { FullScreenContainer, DigitalFlop } from 'e-datav-react';
 ```js
 
 import { DigitalFlop } from 'e-datav-react';
-import 'e-datav-react/lib/index.css';
 
 function Page() {
 
@@ -63,7 +62,6 @@ separator|String|千位分隔符，默认''
 ```js
 
 import { FullScreenContainer, DigitalFlop } from 'e-datav-react';
-import 'e-datav-react/lib/index.css';
 
 function Page() {
 
@@ -86,3 +84,40 @@ export default Page
 type|String|数值，默认'full', 其他可选类型：full（全屏拉伸） full-width（宽度拉伸 ）full-height（高度拉伸）initial （默认不拉伸）
 width|Number|大屏设计稿宽度，也就是公司设计师出的效果图尺寸，默认1920
 height|Number|大屏设计稿高度，默认1080
+
+
+#### 边框组件
+
+所有边框组件，根据父容器宽高自适应
+
+边框组件1
+
+```js
+
+import { BorderBox1 } from 'e-datav-react';
+
+function Page() {
+
+  return (
+      <div style={{ height: 200, width: 200 }}>
+          <BorderBox1>
+          </BorderBox1>
+      </div>
+  )
+}
+
+export default Page
+
+```
+
+##### 效果演示
+
+<img src="./images/border-box-1.gif">
+
+##### 可选参数
+字段|类型|备注
+-|-|-
+borderRadius|Number|边框圆角，默认值3
+borderWidth|Number|边框宽度，默认值3
+colors|String[]|渐变颜色，默认值['#5ddcff', '#4e00c2']，只接受2个值
+duration|Number|动画持续时间，默认值4，单位秒
