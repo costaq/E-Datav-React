@@ -55,6 +55,40 @@ color|String|颜色，默认#000
 separator|String|千位分隔符，默认''
 
 
+#### 水位图
+
+```js
+
+import { WaterLevelPond } from 'e-datav-react';
+
+function Page() {
+
+  return (
+    <div>
+      {/* 宽高不设置，按照父元素100%拉伸 */}
+      <WaterLevelPond value={56} style={{ width: 150, height: 150 }} />
+    </div>
+  )
+}
+
+export default Page
+```
+##### 效果演示
+
+<img src="./images/water-level-pond.gif">
+
+##### 可选参数
+字段|类型|备注
+-|-|-
+value|Number|数值，必填
+decimals|Number|小数点，默认0
+duration|Number|数字变动时动画持续时间，默认3000毫秒
+fontSize|Number|字体大小，默认36
+fontColor|String|颜色，默认#000
+backgroundColor|String|背景色颜色，默认transparent透明
+waveColors|String[]|水波颜色，默认['#41a9e3', '#b0e0ff']，第一个参数为前波浪，后一个参数为后波浪
+
+
 #### 全屏组件
 
 根据屏幕尺寸，自动拉伸

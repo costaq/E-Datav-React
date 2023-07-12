@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-05-09 17:52:36
+ * @LastEditTime: 2023-07-12 14:37:25
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1 } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond } from '../packages';
 
 function App() {
 
@@ -16,7 +16,9 @@ function App() {
       <FullScreenContainer>
         <div style={{ height: 200, width: 200 }}>
           <BorderBox1>
-            <DigitalFlop />
+            {/* <DigitalFlop /> */}
+            {/* 宽高不设置，按照父元素100%拉伸 */}
+            <WaterLevelPond value={56} style={{ width: 150, height: 150 }} />
           </BorderBox1>
         </div>
       </FullScreenContainer>
