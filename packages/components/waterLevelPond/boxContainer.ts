@@ -9,7 +9,7 @@
 import styled from "styled-components";
 import { convertToPx } from "../../utils/common";
 
-type BoxContainerProps = {
+type BoxContentProps = {
     $width?: number | string;
     $height?: number | string;
     $fontSize?: number;
@@ -22,14 +22,18 @@ type WaterWaveProps = {
     $waveColors: Array<string>;
 }
 
-export const BoxContainer = styled.div<BoxContainerProps>`
+export const BoxContainer = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+`;
+
+export const BoxContent = styled.div<BoxContentProps>`
     height: ${props => props.$height ? `${convertToPx(props.$height)}` : '100%'};
     width: ${props => props.$width ? `${convertToPx(props.$width)}` : '100%'};
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: 0px;
+    left: 0px;
     background: ${props => props.$backgroundColor};
     border-radius: 100%;
     overflow: hidden;
