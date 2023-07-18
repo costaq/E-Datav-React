@@ -10,8 +10,6 @@ import styled from "styled-components";
 import { convertToPx } from "../../utils/common";
 
 type BoxContentProps = {
-    $width?: number | string;
-    $height?: number | string;
     $fontSize?: number;
     $fontColor?: string;
     $backgroundColor?: string;
@@ -29,8 +27,8 @@ export const BoxContainer = styled.div`
 `;
 
 export const BoxContent = styled.div<BoxContentProps>`
-    height: ${props => props.$height ? `${convertToPx(props.$height)}` : '100%'};
-    width: ${props => props.$width ? `${convertToPx(props.$width)}` : '100%'};
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0px;
     left: 0px;

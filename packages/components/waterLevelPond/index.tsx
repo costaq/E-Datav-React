@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-11 16:41:44
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 14:55:32
+ * @LastEditTime: 2023-07-18 14:31:05
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -73,8 +73,8 @@ const WaterLevelPond: React.FC<WaterLevelPondProps> = (props) => {
         });
     }
 
-    return <BoxContainer className='e-water-level-pond'>
-        <BoxContent $height={style?.height} $width={style?.width} $fontSize={fontSize} $fontColor={fontColor} $backgroundColor={backgroundColor}>
+    return <BoxContainer style={style} className='e-water-level-pond'>
+        <BoxContent $fontSize={fontSize} $fontColor={fontColor} $backgroundColor={backgroundColor}>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style={{ display: 'none' }}>
                 <symbol id={symbolId}>
                     <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>

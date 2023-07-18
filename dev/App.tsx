@@ -37,11 +37,11 @@ function App() {
           <BorderBox1>
             {/* <DigitalFlop /> */}
             {/* 宽高不设置，按照父元素100%拉伸 */}
-            {/* <WaterLevelPond value={56} style={{ width: 150, height: 150 }} /> */}
+            <WaterLevelPond value={56} style={{ width: 100, height: 100 }} />
           </BorderBox1>
         </div>
         <div>
-          <Tab style={{ width: 100, height: 500 }} items={items} onChange={handleChange} columns={1} value={'1234'}></Tab>
+          <Tab style={{ width: 100, height: 500 }} items={items} onTabChange={handleChange} columns={1} value={'1234'}></Tab>
         </div>
       </FullScreenContainer>
     </div>

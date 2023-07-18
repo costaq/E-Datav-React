@@ -16,7 +16,7 @@ export type TabItem = {
     value: TabItemValue;
 }
 
-export interface TabProps {
+export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
     /**
      * @description 当前值
      */
@@ -56,11 +56,11 @@ export interface TabProps {
     /**
      * @description 选中值改变事件
      */
-    onChange: (value: TabItemValue) => void;
+    onTabChange: (value: TabItemValue) => void;
 }
 
 const Tab: React.FC<TabProps> = (props) => {
-    const { items, columns = 3, margin = 10, fontColor = '#fff', fontSize = 16, duration = 3, value, backgroundColor = 'transparent', borderColors = ['#1CE3B6', '#1F38F1', '#F95A5A'] } = props;
+    const { style, items, columns = 3, margin = 10, fontColor = '#fff', fontSize = 16, duration = 3, value, backgroundColor = 'transparent', borderColors = ['#1CE3B6', '#1F38F1', '#F95A5A'] } = props;
     const { domRef, domSize } = useResize();
     const [selectedValue, setSelectedValue] = useState<TabItemValue>();
     const symbolId = genNonDuplicateID();
@@ -90,9 +90,9 @@ const Tab: React.FC<TabProps> = (props) => {
 
     //React.MouseEvent<SVGSVGElement | undefined, MouseEvent>
     const handleClick = (value: TabItemValue) => {
-        const { onChange } = props;
+        const { onTabChange } = props;
         setSelectedValue(value);
-        onChange(value);
+        onTabChange(value);
     }
 
     // 初始化选中值
@@ -105,7 +105,7 @@ const Tab: React.FC<TabProps> = (props) => {
         }
     }
 
-    return <TabContainer className='e-tabs'>
+    return <TabContainer style={style} className='e-tabs'>
         <TabContent ref={domRef}>
             {
                 items.map(item => (
