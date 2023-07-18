@@ -163,7 +163,7 @@ value|Number或String|值，必须是数字或字符串
 ###### 事件
 事件名称|说明|回调参数
 -|-|-
-onChange|值变化时触发的事件|选中的item值
+onTabChange|值变化时触发的事件|选中的item值
 
 
 #### 全屏组件
