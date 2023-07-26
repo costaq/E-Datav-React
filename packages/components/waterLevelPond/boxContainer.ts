@@ -20,12 +20,6 @@ type WaterWaveProps = {
     $waveColors: Array<string>;
 }
 
-export const BoxContainer = styled.div`
-    position: relative;
-    height: 100%;
-    width: 100%;
-`;
-
 export const BoxContent = styled.div<BoxContentProps>`
     height: 100%;
     width: 100%;

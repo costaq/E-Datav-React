@@ -8,8 +8,9 @@
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { genNonDuplicateID } from '../../utils/common';
-import { BoxContainer, BoxContent, WaterWave } from './boxContainer';
+import { BoxContent, WaterWave } from './boxContainer';
 import { animation } from '../../utils/animation';
+import { GlobalBox } from '../styled/GlobalBox';
 
 export interface WaterLevelPondProps extends React.HTMLAttributes<HTMLDivElement> {
     /**
@@ -73,7 +74,7 @@ const WaterLevelPond: React.FC<WaterLevelPondProps> = (props) => {
         });
     }
 
-    return <BoxContainer style={style} className='e-water-level-pond'>
+    return <GlobalBox style={style} className='e-water-level-pond'>
         <BoxContent $fontSize={fontSize} $fontColor={fontColor} $backgroundColor={backgroundColor}>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style={{ display: 'none' }}>
                 <symbol id={symbolId}>
@@ -96,7 +97,7 @@ const WaterLevelPond: React.FC<WaterLevelPondProps> = (props) => {
                 </svg>
             </WaterWave>
         </BoxContent>
-    </BoxContainer>;
+    </GlobalBox>;
 };
 
 export default WaterLevelPond;

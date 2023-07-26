@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-07-18 14:20:51
+ * @LastEditTime: 2023-07-26 17:15:15
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2 } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 
 function App() {
@@ -43,6 +43,13 @@ function App() {
         <div>
           <Tab style={{ width: 100, height: 500 }} items={items} onTabChange={handleChange} columns={1} value={'1234'}></Tab>
         </div>
+        <div style={{ height: 200, width: 400 }}>
+        {/* 若不通过样式设置宽高，则根据父元素100%拉伸 */}
+          <BorderBox2>
+
+          </BorderBox2>
+        </div>
+
       </FullScreenContainer>
     </div>
   )

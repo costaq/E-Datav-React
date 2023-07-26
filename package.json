@@ -1,7 +1,8 @@
 {
   "name": "e-datav-react",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "type": "module",
+  "description": "React 大屏组件",
   "main": "./cjs/index.cjs",
   "module": "./es/index.js",
   "types": "./es/index.d.ts",

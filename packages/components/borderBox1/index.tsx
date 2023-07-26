@@ -22,7 +22,7 @@ export interface BorderBox1Props extends React.HTMLAttributes<HTMLDivElement> {
     duration?: number;
 }
 
-const DigitalFlop: React.FC<BorderBox1Props> = (props) => {
+const BorderBox1: React.FC<BorderBox1Props> = (props) => {
     const { children, borderRadius = 3, borderWidth = 3, colors = ['#5ddcff', '#4e00c2'], duration = 4 } = props;
     let { domRef, domSize } = useResize();
     const symbolId = genNonDuplicateID();
@@ -67,4 +67,4 @@ const DigitalFlop: React.FC<BorderBox1Props> = (props) => {
     </BorderBox>;
 };
 
-export default DigitalFlop;
+export default BorderBox1;
