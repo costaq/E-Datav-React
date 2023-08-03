@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-11 16:41:44
  * @LastEditors: costa
- * @LastEditTime: 2023-07-18 14:31:05
+ * @LastEditTime: 2023-08-03 10:48:11
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -88,7 +88,7 @@ const WaterLevelPond: React.FC<WaterLevelPondProps> = (props) => {
                 <div className="value">{displayVal}</div>
                 <div className="suffix">%</div>
             </div>
-            <WaterWave $value={displayVal} $waveColors={waveColors}>
+            <WaterWave $id={symbolId} $value={displayVal} $waveColors={waveColors}>
                 <svg viewBox="0 0 560 20" className="water_wave water_wave_back">
                     <use href={`#${symbolId}`}></use>
                 </svg>

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { TabContent, TabContainer, TabItem } from './tab';
+import { TabContent, TabContainer, TabItem, ItemBorder, ItemIcon, ItemText, ItemContent } from './tab';
 import { genNonDuplicateID } from '../../utils/common';
 import { useResize } from '../../hooks/useResize';
 
@@ -14,6 +14,10 @@ export type TabItem = {
      * @description 选中值
      */
     value: TabItemValue;
+    /**
+     * @description 图标
+     */
+    icon?: React.ReactNode;
 }
 
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -105,31 +109,35 @@ const Tab: React.FC<TabProps> = (props) => {
         }
     }
 
-    return <TabContainer style={style} className='e-tabs'>
+    return <TabContainer $id={symbolId} $length={itemSize.width + itemSize.height} style={style} className='e-tabs'>
         <TabContent ref={domRef}>
             {
                 items.map(item => (
                     <TabItem className={selectedValue === item.value ? 'active' : ''}
                         key={`${item.value}`} $margin={margin} $width={itemSize.width} $height={itemSize.height} $duration={duration}
-                        $fontColor={fontColor} $fontSize={fontSize} $backgroundColor={backgroundColor}
-                        onClick={() => handleClick(item.value)}
-                        version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">
-                        <defs>
-                            {/* 模糊 */}
-                            <filter id={`svg-blur-${symbolId}`} x="0" y="0" width={itemSize.width} height={itemSize.height}>
-                                <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
-                                <feGaussianBlur in="offOut" result="blurout" stdDeviation="5" />
-                                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                            </filter>
-                            {/* 渐变颜色 */}
-                            <linearGradient id={`svg-gradient-${symbolId}`} gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">
-                                {
-                                    borderColors.map((color, index) => <stop key={index} offset={`${index / (borderColors.length - 1) * 100}%`} stopColor={color} />)
-                                }
-                            </linearGradient>
-                        </defs>
-                        <rect filter={`url(#svg-blur-${symbolId})`} stroke={`url(#svg-gradient-${symbolId})`} rx="10"></rect>
-                        <text x={itemSize.width / 2} y={itemSize.height / 2}>{item.label}</text>
+                        $backgroundColor={backgroundColor} $id={symbolId}
+                        onClick={() => handleClick(item.value)}>
+                        <ItemBorder version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">
+                            <defs>
+                                {/* 模糊 */}
+                                <filter id={`svg-blur-${symbolId}`} x="0" y="0" width={itemSize.width} height={itemSize.height}>
+                                    <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
+                                    <feGaussianBlur in="offOut" result="blurout" stdDeviation="5" />
+                                    <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                                </filter>
+                                {/* 渐变颜色 */}
+                                <linearGradient id={`svg-gradient-${symbolId}`} gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    {
+                                        borderColors.map((color, index) => <stop key={index} offset={`${index / (borderColors.length - 1) * 100}%`} stopColor={color} />)
+                                    }
+                                </linearGradient>
+                            </defs>
+                            <rect filter={`url(#svg-blur-${symbolId})`} stroke={`url(#svg-gradient-${symbolId})`} rx="10"></rect>
+                        </ItemBorder>
+                        <ItemContent $fontColor={fontColor} $fontSize={fontSize}>
+                            <ItemIcon>{item.icon}</ItemIcon>
+                            <ItemText>{item.label}</ItemText>
+                        </ItemContent>
                     </TabItem>
                 ))
             }

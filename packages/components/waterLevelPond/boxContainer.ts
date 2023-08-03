@@ -7,7 +7,6 @@
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import styled from "styled-components";
-import { convertToPx } from "../../utils/common";
 
 type BoxContentProps = {
     $fontSize?: number;
@@ -16,6 +15,7 @@ type BoxContentProps = {
 }
 
 type WaterWaveProps = {
+    $id: string;
     $value: number;
     $waveColors: Array<string>;
 }
@@ -66,26 +66,26 @@ export const WaterWave = styled.div<WaterWaveProps>`
 .water_wave_back {
     right: 0;
     fill: ${props => props.$waveColors[1]};
-    -webkit-animation: wave-back 2s infinite linear;
-    animation: wave-back 2s infinite linear;
+    -webkit-animation: wave-back-${props => props.$id} 2s infinite linear;
+    animation: wave-back-${props => props.$id} 2s infinite linear;
 }
 
 .water_wave_front {
     left: 0;
     fill: ${props => props.$waveColors[0]};
     margin-bottom: -1px;
-    -webkit-animation: wave-front 1s infinite linear;
-    animation: wave-front 1s infinite linear;
+    -webkit-animation: wave-front-${props => props.$id} 1s infinite linear;
+    animation: wave-front-${props => props.$id} 1s infinite linear;
 }
 
-@keyframes wave-front {
+@keyframes wave-front-${props => props.$id} {
     100% {
       -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
     }
 }
 
-@keyframes wave-back {
+@keyframes wave-back-${props => props.$id} {
     100% {
       -webkit-transform: translate(50%, 0);
       transform: translate(50%, 0);
