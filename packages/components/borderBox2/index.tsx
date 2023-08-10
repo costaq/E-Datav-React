@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-26 14:11:40
  * @LastEditors: costa
- * @LastEditTime: 2023-07-26 17:20:35
+ * @LastEditTime: 2023-08-10 13:22:52
  * @Description: 边框组件2
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -35,7 +35,7 @@ const BorderBox2: React.FC<BorderBox2Props> = (props) => {
     let { domRef, domSize } = useResize();
 
     return <GlobalBox style={style} className='e-border-box-2' ref={domRef}>
-        <BorderContainer $height={domSize.height} $width={domSize.width} $borderColor={borderColor} $borderWidth={borderWidth} $lineWidth={lineWidth} $backgroundColor={backgroundColor}>
+        <BorderContainer $borderColor={borderColor} $borderWidth={borderWidth} $lineWidth={lineWidth} $backgroundColor={backgroundColor}>
             {children}
         </BorderContainer>
     </GlobalBox>;

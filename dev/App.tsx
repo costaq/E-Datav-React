@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-08-03 11:34:25
+ * @LastEditTime: 2023-08-10 13:21:24
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -48,10 +48,10 @@ function App() {
           <Tab style={{ width: 700, height: 500 }} items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab>
         </div> */}
         <div style={{ height: 200, width: 400 }}>
-        {/* 若不通过样式设置宽高，则根据父元素100%拉伸 */}
-          {/* <BorderBox2 borderColor="#e2777a" lineWidth={30} backgroundColor="#e2777a26">
-
-          </BorderBox2> */}
+          {/* 若不通过样式设置宽高，则根据父元素100%拉伸 */}
+          <BorderBox2 borderColor="#e2777a" lineWidth={30} backgroundColor="#e2777a26">
+            <Tab items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab>
+          </BorderBox2>
         </div>
 
       </FullScreenContainer>
