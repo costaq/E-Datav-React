@@ -2,16 +2,20 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-08-10 13:21:24
+ * @LastEditTime: 2023-08-16 13:47:28
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2 } from '../packages';
+import { useEffect, useState } from 'react';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, ScrollRankingBoard } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 // import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
+
+
 function App() {
+  const [rankingItems, setRankingItems] = useState<any>([]);
+
   const items = [
     {
       label: '测试1',
@@ -28,8 +32,26 @@ function App() {
     }
   ]
 
+  useEffect(() => {
+    setRankingItems(Array(6).fill(0).map((item, index) => {
+      return {
+        label: `测试${index}`,
+        value: index * 100
+      }
+    }));
+  }, [])
+
   const handleChange = (value: TabItemValue) => {
     console.log(value);
+  }
+
+  const handleChangeItems = () => {
+    setRankingItems(Array(10).fill(0).map((item, index) => {
+      return {
+        label: `测试${index}`,
+        value: index * 100
+      }
+    }));
   }
 
   return (
@@ -50,10 +72,13 @@ function App() {
         <div style={{ height: 200, width: 400 }}>
           {/* 若不通过样式设置宽高，则根据父元素100%拉伸 */}
           <BorderBox2 borderColor="#e2777a" lineWidth={30} backgroundColor="#e2777a26">
-            <Tab items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab>
+            {/* <Tab items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab> */}
+            <ScrollRankingBoard items={rankingItems} type="page" />
           </BorderBox2>
+          
         </div>
-
+        <ScrollRankingBoard items={rankingItems} style={{ height: 200, width: 400 }} />
+        <a style={{ color: '#fff' }} onClick={handleChangeItems} >测试</a>
       </FullScreenContainer>
     </div>
   )

@@ -1,3 +1,9 @@
+# 0.6.0 (2023-08-16)
+
+### Features
+
+* **e-scroll-ranking-board:** 新增了排名轮播表组件
+
 # 0.5.3 (2023-08-10)
 
 ### Bug Fixes
