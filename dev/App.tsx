@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-08-16 13:47:28
+ * @LastEditTime: 2023-09-06 17:47:09
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useEffect, useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, ScrollRankingBoard } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, ScrollRankingBoard, DynamicText } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 // import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -15,6 +15,7 @@ import { TabItemValue } from '../packages/components/tab';
 
 function App() {
   const [rankingItems, setRankingItems] = useState<any>([]);
+  const [text, setText] = useState<string>('E-DataV数据大屏');
 
   const items = [
     {
@@ -54,6 +55,10 @@ function App() {
     }));
   }
 
+  const handleChangeText = () => {
+    setText('E-DataV数据大屏驾驶舱');
+  }
+
   return (
     <div className="App">
       <FullScreenContainer>
@@ -63,6 +68,9 @@ function App() {
             <WaterLevelPond value={56} style={{ width: 100, height: 100 }} />
           </BorderBox1>
         </div> */}
+        <div style={{ height: 200, width: 500 }}>
+          <DynamicText text={text} colors={['#f53f3f', '#1e80ff']} style={{ fontSize: 36, fontWeight: 'bold' }} /><button onClick={handleChangeText}>更换文字</button>
+        </div>
         <div>
           <Tab style={{ width: 700, height: 100 }} items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab>
         </div>
@@ -75,7 +83,6 @@ function App() {
             {/* <Tab items={items} onTabChange={handleChange} columns={3} value={'1234'}></Tab> */}
             <ScrollRankingBoard items={rankingItems} type="page" />
           </BorderBox2>
-          
         </div>
         <ScrollRankingBoard items={rankingItems} style={{ height: 200, width: 400 }} />
         <a style={{ color: '#fff' }} onClick={handleChangeItems} >测试</a>
