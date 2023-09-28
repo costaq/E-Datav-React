@@ -1,3 +1,21 @@
+<!--
+ * @Autor: costa
+ * @Date: 2023-08-02 16:40:44
+ * @LastEditors: costa
+ * @LastEditTime: 2023-09-28 15:07:06
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+-->
+# 0.8.0 (2023-09-28)
+
+### Features
+
+* **e-border-box-3:** 新增了边框组件3
+
+### Optimization
+
+* **e-border-box-2:** 优化布局
+
 # 0.7.0 (2023-09-06)
 
 ### Features

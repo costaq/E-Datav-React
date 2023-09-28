@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { TabContent, TabContainer, TabItem, ItemBorder, ItemIcon, ItemText, ItemContent } from './tab';
+import { TabContent, TabContainer, TabItem, ItemBorder, ItemIcon, ItemText, ItemContent } from './tab.style';
 import { genNonDuplicateID } from '../../utils/common';
 import { useResize } from '../../hooks/useResize';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { GlobalBox } from '../styled/GlobalBox';
 import { useResize } from '../../hooks/useResize';
-import { BoardItem, BoardItemIcon, BoardItemLabel, BoardItemShadow, BoardItemValue } from './board';
+import { BoardItem, BoardItemIcon, BoardItemLabel, BoardItemShadow, BoardItemValue } from './board.style';
 
 export type ScrollRankingBoardItem = {
     label: string;

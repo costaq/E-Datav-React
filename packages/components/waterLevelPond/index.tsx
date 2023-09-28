@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-07-11 16:41:44
  * @LastEditors: costa
- * @LastEditTime: 2023-08-03 10:48:11
+ * @LastEditTime: 2023-09-28 14:43:24
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { genNonDuplicateID } from '../../utils/common';
-import { BoxContent, WaterWave } from './boxContainer';
+import { BoxContent, WaterWave } from './pond.style';
 import { animation } from '../../utils/animation';
 import { GlobalBox } from '../styled/GlobalBox';
 

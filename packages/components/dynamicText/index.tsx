@@ -1,6 +1,6 @@
 import React from "react";
 import { useMemo } from "react";
-import { Text, TextContainer } from "./container";
+import { Text, TextContainer } from "./text.style";
 
 export interface DynamicTextProps extends React.HTMLAttributes<HTMLDivElement> {
     /**

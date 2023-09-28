@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-09-06 17:47:09
+ * @LastEditTime: 2023-09-28 15:04:14
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useEffect, useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, ScrollRankingBoard, DynamicText } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, BorderBox3, ScrollRankingBoard, DynamicText } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 // import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -68,6 +68,9 @@ function App() {
             <WaterLevelPond value={56} style={{ width: 100, height: 100 }} />
           </BorderBox1>
         </div> */}
+        <div style={{ width: 500, height: 200 }} >
+          <BorderBox3 text={text} borderColor="#1e80ff" backgroundColor="transparent" textPosition="right" fontColor="#fff" />
+        </div>
         <div style={{ height: 200, width: 500 }}>
           <DynamicText text={text} colors={['#f53f3f', '#1e80ff']} style={{ fontSize: 36, fontWeight: 'bold' }} /><button onClick={handleChangeText}>更换文字</button>
         </div>
