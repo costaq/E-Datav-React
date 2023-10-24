@@ -2,10 +2,20 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:40:44
  * @LastEditors: costa
- * @LastEditTime: 2023-09-28 15:07:06
+ * @LastEditTime: 2023-10-24 13:59:44
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.9.0 (2023-10-24)
+
+### Features
+
+* **e-loading:** 新增了Loading加载组件
+
+### Optimization
+
+* **e-full-screen-container:** 屏幕resize事件增加防抖
+
 # 0.8.0 (2023-09-28)
 
 ### Features

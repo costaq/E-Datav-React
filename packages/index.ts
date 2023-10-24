@@ -7,6 +7,7 @@ export type { WaterLevelPondProps } from './components/waterLevelPond';
 export type { TabProps } from './components/tab';
 export type { ScrollRankingBoardProps } from './components/scrollRankingBoard';
 export type { DynamicTextProps } from './components/dynamicText';
+export type { LoadingProps } from './components/loading';
 
 export { default as FullScreenContainer } from './components/fullScreenContainer';
 export { default as DigitalFlop } from './components/digitalFlop';
@@ -17,3 +18,4 @@ export { default as WaterLevelPond } from './components/waterLevelPond';
 export { default as Tab } from './components/tab';
 export { default as ScrollRankingBoard } from './components/scrollRankingBoard';
 export { default as DynamicText } from './components/dynamicText';
+export { default as Loading } from './components/loading';

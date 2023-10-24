@@ -1,4 +1,13 @@
+/*
+ * @Autor: costa
+ * @Date: 2023-04-18 15:39:13
+ * @LastEditors: costa
+ * @LastEditTime: 2023-10-24 13:53:32
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+ */
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { debounce } from '../../utils/common';
 
 /**
  * @description full 全部拉伸 | full-width 宽度拉伸 | full-height 高度拉伸 | initial 初始化默认不拉伸
@@ -23,10 +32,11 @@ export interface FullScreenContainerProps extends React.HTMLAttributes<HTMLDivEl
 const FullScreenContainer: React.FC<PropsWithChildren<FullScreenContainerProps>> = (props) => {
   const { children, width = 1920, height = 1080, type = 'full' } = props;
 
+  
+
   useEffect(() => {
     scale();
-
-    window.onresize = () => scale();
+    window.onresize = () => changeScale();
   }, []);
 
   useEffect(() => {
@@ -83,6 +93,8 @@ const FullScreenContainer: React.FC<PropsWithChildren<FullScreenContainerProps>>
 
     head.appendChild(style);
   }
+
+  const changeScale = debounce(scale, 100);
 
   return (
     <>{children}</>

@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-09-28 15:04:14
+ * @LastEditTime: 2023-10-24 13:43:23
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useEffect, useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Tab, BorderBox2, BorderBox3, ScrollRankingBoard, DynamicText } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Loading, Tab, BorderBox2, BorderBox3, ScrollRankingBoard, DynamicText } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 // import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -62,6 +62,15 @@ function App() {
   return (
     <div className="App">
       <FullScreenContainer>
+        {/* <Loading borderColor='#f53f3f' size={80} style={{ position: 'absolute', fontSize: 12, color: '#ff9797' }}>
+          加载中...
+        </Loading> */}
+        {/* <div style={{ height: 600 }}>
+          <Loading>
+            加载中...
+          </Loading>
+        </div> */}
+
         {/* <div style={{ height: 200, width: 200 }}>
           <BorderBox1>
             <DigitalFlop color="#fff" />
