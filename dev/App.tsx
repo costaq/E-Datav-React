@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-18 14:56:33
  * @LastEditors: costa
- * @LastEditTime: 2023-10-24 13:43:23
+ * @LastEditTime: 2023-12-11 15:52:25
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { useEffect, useState } from 'react';
-import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Loading, Tab, BorderBox2, BorderBox3, ScrollRankingBoard, DynamicText } from '../packages';
+import { FullScreenContainer, DigitalFlop, BorderBox1, WaterLevelPond, Loading, Tab, BorderBox2, BorderBox3, ScrollRankingBoard, DynamicText, GaugeChart } from '../packages';
 import { TabItemValue } from '../packages/components/tab';
 // import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -16,6 +16,7 @@ import { TabItemValue } from '../packages/components/tab';
 function App() {
   const [rankingItems, setRankingItems] = useState<any>([]);
   const [text, setText] = useState<string>('E-DataV数据大屏');
+  const [value, setValue] = useState<number>(0);
 
   const items = [
     {
@@ -59,6 +60,10 @@ function App() {
     setText('E-DataV数据大屏驾驶舱');
   }
 
+  const handleChangeValue = (e: any) => {
+    setValue(+e.target.value);
+  }
+
   return (
     <div className="App">
       <FullScreenContainer>
@@ -77,6 +82,12 @@ function App() {
             <WaterLevelPond value={56} style={{ width: 100, height: 100 }} />
           </BorderBox1>
         </div> */}
+        <div style={{ width: 200, height: 200 }}>
+          <GaugeChart value={value} valueFontSize={50} />
+        </div>
+        <div>
+          <input value={value} onChange={handleChangeValue} />
+        </div>
         <div style={{ width: 500, height: 200 }} >
           <BorderBox3 text={text} borderColor="#1e80ff" backgroundColor="transparent" textPosition="right" fontColor="#fff" />
         </div>
